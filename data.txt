@@ -1,0 +1,5 @@
+How start the instance variables?*@
+How create a new object from the class Pencil?*Pencil.new
+How declarate a method in ruby?*def
+How to assigns the value 5 to a variable x?*x = 5
+Answer True or False. Ruby is a OOP?*True
