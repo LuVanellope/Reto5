@@ -11,41 +11,37 @@
 4 . Finalizadas todas las preguntas decir que termino exitosamente.
 =end
 
-class Read
+class TheGame
   
   def initialize
-    @h = {}
+    @question_answer = {}
   end
  
   def open
     content_lines = File.readlines("data.txt") 
-    @h = {}
-    content_lines.map do |line|
+    content_lines.each do |line|
       line_array = line.chomp.split("*")
-     #puts line_array
-      @h[line_array[0]] = line_array[1]
+      @question_answer[line_array[0]] = line_array[1]
     end
-   # puts @h
   end
     
   def ask
     puts "Welcome to dare 5! Can you answer all the questions? let\'s see"
-    @h.each do |question, answer|
+    @question_answer.each do |question, answer|
       puts "Question: #{question}"
       reply = gets.chomp
       while reply.downcase != answer.downcase
         puts 'that\s not correct! Try again'
         reply = gets.chomp
       end  
-      puts 'that\s correct!'  
+      puts 'that\'s correct!'  
     end 
     puts 'We are finish! congrats'
   end  
 end 
 
 
-player2 = Read.new
+player2 = TheGame.new
 player2.open
-puts 
 player2.ask
 
